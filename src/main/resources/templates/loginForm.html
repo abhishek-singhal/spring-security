@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome!</title>
+</head>
+<body>
+	<p th:if="${param.error != null}">Invalid Username/Password</p>
+	<p th:if="${param.logout != null}">You have been logged out!</p>
+	<form th:method="POST" th:action="@{/processLogin}">
+		<input type="text" name="username" placeholder="Enter Username.."><br />
+		<input type="password" name="password" placeholder="Enter Password.."><br />
+		<input type="submit" value="Login" />
+	</form>
+</body>
+</html>
